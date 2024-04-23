@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WAPH-Login page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    #digit-clock {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form {
+      text-align: center;
+    }
+    .text_field {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .button {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <script type="text/javascript">
+    function displayTime() {
+      document.getElementById('digit-clock').innerHTML = "Current time:" + new Date();
+    }
+    setInterval(displayTime, 500);
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>FINAL PROJECT MINI FACEBOOK</h1>
+    <h2>WAPH TEAM 27</h2>
+    <div id="digit-clock"></div>
+    <?php
+      echo "Visited time: " . date("Y-m-d h:i:sa");
+    ?>
+    <form action="index.php" method="POST" class="form login">
+      <input type="text" class="text_field" name="username" placeholder="Username" required><br>
+      <input type="password" class="text_field" name="password" placeholder="Password" required><br>
+      <a href="registrationform.php" class="button">Register</a>
+      <button class="button" type="submit">Login</button>
+    </form>
+  </div>
+</body>
+</html>
+
